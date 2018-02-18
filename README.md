@@ -10,42 +10,17 @@ Desde tu usuario de **GitHub**, busca el repositorio externo en el que quieres c
 
 **IMAGEN FORK AQUI**
 
-<<<<<<< HEAD
+
 Una vez que **GitHub** ha clonado el repositorio externo a tu cuenta, abre el repositorio y busca el botón de `clone or download`, luego copia la dirección URL.
 
 **IMAGEN FORK2 AQUI**
 
 ## Sincroniza el fork en un repositorio local
-||||||| merged common ancestors
-1. Sincronizar el repo con el original
-=======
-Una vez que **GitHub** ha clonado el repositorio externo a tu cuenta, abre el repositorio y busca el botón de `clone or download`, luego copia la dirección URL.
->>>>>>> 1418ad016903d896e5c98cad02c9af18f218250a
 
-<<<<<<< HEAD
-||||||| merged common ancestors
-```
-git remote add upstream git@github.com:<original-name>/<repo>.git
-git fetch upstream
-```
-=======
-**IMAGEN FORK2 AQUI**
-
-## Sincroniza el fork en un repositorio local
->>>>>>> 1418ad016903d896e5c98cad02c9af18f218250a
-
-<<<<<<< HEAD
-Entra a **RStudio**. Luego, ve a  `New --> Project from Version Control`. Pega el URL que copiaste en el paso anterior, deja el nombre del repositorio por defecto, y escoge una carpeta para la copia local de los archivos.
-
-El siguiente paso es muy importante. Tienes que decirle a **Git** que éste repositorio tiene un origen externo. Luego, que quieres volver a descargar todo desde el origen externo para mantener los archivos sincronizados. Para ello, ve a la consola **Git CMD**, y digita las siguientes líneas, cambiando los nombres correspondientes al repositorio externo.
-||||||| merged common ancestors
-4.  Luego, se pueden fusionar (*merge*) los cambios desde el repo original, hasta la copia local (*forked*) con:
-=======
 
 Entra a **RStudio**. Luego, ve a  `New --> Project from Version Control`. Pega el URL que copiaste en el paso anterior, deja el nombre del repositorio por defecto, y escoge una carpeta para la copia local de los archivos.
 
 El siguiente paso es muy importante. Tienes que decirle a **Git** que éste repositorio tiene un origen externo. Luego, que quieres volver a descargar todo desde el origen externo para mantener los archivos sincronizados. Para ello, ve a la consola **Git CMD**, y digita las siguientes líneas, cambiando los nombres correspondientes al repositorio externo.
->>>>>>> 1418ad016903d896e5c98cad02c9af18f218250a
 
 ```
 git remote add upstream git@github.com:<autor-original>/<repo-externo>.git
@@ -85,7 +60,7 @@ Una vez que los cambios en tu rama local estén listos, y hayas decidido que tu 
 
 # Actualizar el Fork
 
-Correr **RStudio** como administrador.
+Correr **RStudio** como administrador. En la pestaña de **Git**, en la parte superior derecha, haz click en el botón de refrescar.
 
 En la consola de `git CMD`, indícale a **Git** que vas a leer desde el repositorio externo, para actualizar los cambios hechos por el autor principal (que deberían incluir aquellos que propusiste en un *pull request* si el autor los aceptó):
 
@@ -107,6 +82,47 @@ git branch -u origin/master
 git push
 ```
 
+
+### Confirma que todo salió bien
+
+Aquí se muestra una sesión exitosa donde se actualizó un *Fork*.
+
+```
+
+$ git branch -u upstream/master
+Branch master set up to track remote branch master from upstream.
+
+
+$ git merge upstream/master
+Already up-to-date.
+
+
+$ git pull
+Enter passphrase for key '/c/Users/David/.ssh/id_rsa':
+remote: Counting objects: 1, done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), done.
+From github.com:davidmartinezcascante/pullRequestGuia
+   a65ccec..b9a7264  master     -> upstream/master
+Updating ea776ca..b9a7264
+Fast-forward
+
+
+$ git branch -u origin/master
+
+Branch master set up to track remote branch master from origin.
+
+
+$ git push
+
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 675 bytes | 0 bytes/s, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To https://github.com/dawidh15/pullRequestGuia.git
+   ea776ca..b9a7264  master -> master
+
+
+```
 
 ## Borrar ramas antiguas
 
