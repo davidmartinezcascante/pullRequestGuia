@@ -10,16 +10,42 @@ Desde tu usuario de **GitHub**, busca el repositorio externo en el que quieres c
 
 **IMAGEN FORK AQUI**
 
+<<<<<<< HEAD
 Una vez que **GitHub** ha clonado el repositorio externo a tu cuenta, abre el repositorio y busca el botón de `clone or download`, luego copia la dirección URL.
 
 **IMAGEN FORK2 AQUI**
 
 ## Sincroniza el fork en un repositorio local
+||||||| merged common ancestors
+1. Sincronizar el repo con el original
+=======
+Una vez que **GitHub** ha clonado el repositorio externo a tu cuenta, abre el repositorio y busca el botón de `clone or download`, luego copia la dirección URL.
+>>>>>>> 1418ad016903d896e5c98cad02c9af18f218250a
 
+<<<<<<< HEAD
+||||||| merged common ancestors
+```
+git remote add upstream git@github.com:<original-name>/<repo>.git
+git fetch upstream
+```
+=======
+**IMAGEN FORK2 AQUI**
+
+## Sincroniza el fork en un repositorio local
+>>>>>>> 1418ad016903d896e5c98cad02c9af18f218250a
+
+<<<<<<< HEAD
+Entra a **RStudio**. Luego, ve a  `New --> Project from Version Control`. Pega el URL que copiaste en el paso anterior, deja el nombre del repositorio por defecto, y escoge una carpeta para la copia local de los archivos.
+
+El siguiente paso es muy importante. Tienes que decirle a **Git** que éste repositorio tiene un origen externo. Luego, que quieres volver a descargar todo desde el origen externo para mantener los archivos sincronizados. Para ello, ve a la consola **Git CMD**, y digita las siguientes líneas, cambiando los nombres correspondientes al repositorio externo.
+||||||| merged common ancestors
+4.  Luego, se pueden fusionar (*merge*) los cambios desde el repo original, hasta la copia local (*forked*) con:
+=======
 
 Entra a **RStudio**. Luego, ve a  `New --> Project from Version Control`. Pega el URL que copiaste en el paso anterior, deja el nombre del repositorio por defecto, y escoge una carpeta para la copia local de los archivos.
 
 El siguiente paso es muy importante. Tienes que decirle a **Git** que éste repositorio tiene un origen externo. Luego, que quieres volver a descargar todo desde el origen externo para mantener los archivos sincronizados. Para ello, ve a la consola **Git CMD**, y digita las siguientes líneas, cambiando los nombres correspondientes al repositorio externo.
+>>>>>>> 1418ad016903d896e5c98cad02c9af18f218250a
 
 ```
 git remote add upstream git@github.com:<autor-original>/<repo-externo>.git
