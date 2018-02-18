@@ -6,41 +6,84 @@ Tomado de [Hadley Wickhamh, R packages](http://r-pkgs.had.co.nz/git.html#git-pul
 
 ## Fork
 
-1.  Hacer un fork desde su usuario de **GitHub**
+Desde tu usuario de **GitHub**, busca el repositorio externo en el que quieres colaborar. Una vez dentro del repositorio externo, busca el botón de `Fork`, presiónalo y escoge la cuenta a la cual vas a clonar el repositorio.
 
-1.  Clonar el Fork a un repo local, usando **RStudio** `New --> Project from Version Control`.
+**IMAGEN FORK AQUI**
 
-1. Sincronizar el repo con el original
+Una vez que **GitHub** ha clonado el repositorio externo a tu cuenta, abre el repositorio y busca el botón de `clone or download`, luego copia la dirección URL.
+
+**IMAGEN FORK2 AQUI**
+
+## Sincroniza el fork en un repositorio local
+
+
+Entra a **RStudio**. Luego, ve a  `New --> Project from Version Control`. Pega el URL que copiaste en el paso anterior, deja el nombre del repositorio por defecto, y escoge una carpeta para la copia local de los archivos.
+
+El siguiente paso es muy importante. Tienes que decirle a **Git** que éste repositorio tiene un origen externo. Luego, que quieres volver a descargar todo desde el origen externo para mantener los archivos sincronizados. Para ello, ve a la consola **Git CMD**, y digita las siguientes líneas, cambiando los nombres correspondientes al repositorio externo.
 
 ```
-git remote add upstream git@github.com:<original-name>/<repo>.git
+git remote add upstream git@github.com:<autor-original>/<repo-externo>.git
+
 git fetch upstream
+
+git merge upstream/master 
 ```
 
-4.  Luego, se pueden fusionar (*merge*) los cambios desde el repo original, hasta la copia local (*forked*) con:
-
-```
-git merge upstream/master  
-```
-
-5.  Se recomienda trabajar siempre en ramas (*branches*), cuando se contribuye con un repositorio que no es propio. En ese caso, se puede sincronizar la rama original (*master*) con el siguiente código:
+Ahora **Git** sabe del repositorio original, de manera que puedes estar al día con los cambios que haga el autor principal.  Cada vez que quieras actualizar tu repositorio local con el repositorio externo, debes decirle a **Git** que se ubique en una rama especial, digitando en el **Git CMD**:
 
 ```
 git branch -u upstream/master  
 ```
 
-6.  Entonces, para mantener la rama *master* en su repositorio local, usar:
+Luego, haces un `pull`, con la particularidad de que estás tomando los archivos del repositorio externo y no del tuyo.
 
 ```
 git checkout master
 git pull
 ```
 
-7.  Recuerda actualizar constantemente la rama local (`<my-branch>`), por si ocurren cambios en el documento original:
+Se recomienda crear una rama (`<my-branch>`) para trabajar en un *pull request*; ya que, realmente no estás trabajando sobre la línea principal de desarrollo. Para mantener `<my-branch>` actualizada, digita en **Git CMD**:
 
 ```
 git checkout <my-branch>
 git merge master
 ```
 
-8. Una vez que los cambios en tu rama local estén listos, haz un *push*, y en la página de **GitHub** sigue los pasos para hacer un *Pull Request* al repo original.
+Una vez que los cambios en tu rama local estén listos, y hayas decidido que tu contribución merece ser vista por el autor principal del repo, haz un *push*, y en la página de **GitHub** sigue los pasos para hacer un *Pull Request* al repo original.
+
+
+# Actualizar el Fork
+
+Correr **RStudio** como administrador.
+
+En la consola de `git CMD`, cambia a la rama configurada para leer del repositorio externo:
+
+```
+git branch -u upstream/master
+```
+
+Luego, descarga los cambios:
+
+```
+git pull
+```
+
+Luego, cambia la configuración para leer y escribir en el repositorio local, y *empuja* los cambios:
+
+```
+git branch -u origin/master
+
+git push
+```
+
+
+## Borrar ramas antiguas
+
+
+Una vez que se ha aceptado un *pull request*, ya no es necesario seguir trabajando en esa rama. Esta puede borrarse localmente al escribir `git branch -d <my-branch>`.  Y para borrarlo del repositorio en línea se utiliza:
+
+```
+ git push origin --delete <my-branch>
+ ```
+ 
+Siempre y cuado `origin` apunte al repositorio remoto. 
