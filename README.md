@@ -1,4 +1,5 @@
 # pullRequestGuia
+
 Describe cómo hacer un Pull Request
 
 Tomado de [Hadley Wickhamh, R packages](http://r-pkgs.had.co.nz/git.html#git-pullreq).
@@ -22,7 +23,7 @@ git fetch upstream
 git merge upstream/master  
 ```
 
-5.  Se recomienda trabajar siempre en ramas, cuando se contribuye con un repositorio que no es propio. En ese caso, se puede sincronizar la rama original (*master*) con el siguiente código:
+5.  Se recomienda trabajar siempre en ramas (*branches*), cuando se contribuye con un repositorio que no es propio. En ese caso, se puede sincronizar la rama original (*master*) con el siguiente código:
 
 ```
 git branch -u upstream/master  
@@ -35,11 +36,11 @@ git checkout master
 git pull
 ```
 
-7.  Recuerda actualizar constantemente la rama local, por si ocurren cambios en el documento original:
+7.  Recuerda actualizar constantemente la rama local (`<my-branch>`), por si ocurren cambios en el documento original:
 
 ```
 git checkout <my-branch>
 git merge master
 ```
 
-8. Una vez que los cambios en tu rama local estén listos, haz un *push*, y en la página de **GitHub** sigue los pasos para hacer un *Pull Request* al repo original
+8. Una vez que los cambios en tu rama local estén listos, haz un *push*, y en la página de **GitHub** sigue los pasos para hacer un *Pull Request* al repo original.
