@@ -74,7 +74,8 @@ Si hay algo mal con las direcciones del **upstream**, debes borrar primero las d
 
 La línea de desarrollo principal le pertenece al dueño del repositorio (**upstream**); por tanto, tú nunca estás realizando un trabajo sobre el tronco principal del proyecto, sino que trabajas en ramas del proyecto. Para crear una rama desde **RStudio** sigue los pasos de la figura de abajo:
 
-IMAGEN new branch
+![Hacer una rama en RStudio](https://github.com/dawidh15/dinPob/blob/master/figuras/PullRequest3.png)
+
 
 Una vez que haz creado la rama, puedes hacer todos los cambios que quieras en el documento. Hacer `commits`, y subir los cambios a tu copia remota (**origin**).
 
@@ -132,4 +133,7 @@ Si en este punto, ya no necesitas seguir trabajando en tu rama, puedes borrarla 
 
 ![New Pull request, paso 2](https://github.com/dawidh15/dinPob/blob/master/figuras/PullRequest2.png)
 
+![New Pull request, paso 3](https://github.com/dawidh15/dinPob/blob/master/figuras/PullRequest4.png)
+
+![New Pull request, paso 4](https://github.com/dawidh15/dinPob/blob/master/figuras/PullRequest5.png)
 
